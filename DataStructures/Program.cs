@@ -1,12 +1,15 @@
 ﻿using DataStructures.Stack;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace DataStructures
 {
     class Program
     {
+        private static string path = "log.txt";
+
         static void Main(string[] args)
         {
             StackMethod();
@@ -33,17 +36,31 @@ namespace DataStructures
 
             SomeMethod2();
 
+            var message1 = $"Top item: {stack.Peek().Name}";
+
             // peek and see :O
-            Console.WriteLine($"Top item: {stack.Peek().Name}");
+            FileWriter(message1);
 
             // remove top
             var topItem = stack.Pop();
-            Console.WriteLine($"Removed Item: {topItem.Name}");
-            Console.WriteLine($"Top after removing: {stack.Peek().Name}");
+            var message2 = $"Removed Item: {topItem.Name}";
+            var message3 = $"Top after removing: {stack.Peek().Name}";
+
+            FileWriter(message2);
+            FileWriter(message3);
         }
 
         private static void SomeMethod1() => Console.WriteLine("method 1");
 
         private static void SomeMethod2() => Console.WriteLine("inside method");
+
+        private static void FileWriter(string message)
+        {
+            using (var log = File.AppendText(path))
+            {
+                log.WriteLine(message);
+                log.Flush();
+            }
+        }
     }
 }
