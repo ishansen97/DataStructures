@@ -1,0 +1,3 @@
+Top item: Andrew
+Removed Item: Andrew
+Top after removing: James
