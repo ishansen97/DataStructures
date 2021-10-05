@@ -36,15 +36,15 @@ namespace DataStructures
 
             SomeMethod2();
 
-            var message1 = $"Top item: {stack.Peek().Name}";
+            var message1 = $"{DateTime.Now.ToLocalTime()}\t Top item: {stack.Peek().Name}";
 
             // peek and see :O
             FileWriter(message1);
 
             // remove top
             var topItem = stack.Pop();
-            var message2 = $"Removed Item: {topItem.Name}";
-            var message3 = $"Top after removing: {stack.Peek().Name}";
+            var message2 = $"{DateTime.Now.ToLocalTime()}\t Removed Item: {topItem.Name}";
+            var message3 = $"{DateTime.Now.ToLocalTime()}\t Top after removing: {stack.Peek().Name}";
 
             FileWriter(message2);
             FileWriter(message3);
