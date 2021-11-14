@@ -1,4 +1,5 @@
-﻿using DataStructures.Stack;
+﻿using DataStructures.Queue;
+using DataStructures.Stack;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,8 +13,35 @@ namespace DataStructures
 
         static void Main(string[] args)
         {
-            StackMethod();
-            SomeMethod1();
+            /*StackMethod();
+            SomeMethod1();*/
+            //QueueMethod();
+        }
+
+        private static void QueueMethod()
+        {
+            var item1 = new QueueItem { Name = "Ishan", Age = 22 };
+            var item2 = new QueueItem { Name = "Janadi", Age = 18 };
+            var item3 = new QueueItem { Name = "Pika", Age = 25 };
+            var item4 = new QueueItem { Name = "Roshni", Age = 19 };
+            var item5 = new QueueItem { Name = "Jahrin", Age = 30 };
+
+            var queue = new RegularQueue();
+
+            // enqueue
+            queue.Enqueue(item1);
+            queue.Enqueue(item2);
+            queue.Enqueue(item3);
+            queue.Enqueue(item4);
+            queue.Enqueue(item5);
+
+            Console.WriteLine("bla");
+
+            // remove
+            queue.Dequeue();
+
+            Console.WriteLine($"Now i am at the front: {queue.Peek().Name}");
+            queue.Enqueue(new QueueItem { Name = "Harry Styles", Age = 27});
         }
 
         private static void StackMethod()
