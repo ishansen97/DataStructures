@@ -1,4 +1,5 @@
-﻿using DataStructures.Queue;
+﻿using DataStructures.LinkedList;
+using DataStructures.Queue;
 using DataStructures.Stack;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,20 @@ namespace DataStructures
             /*StackMethod();
             SomeMethod1();*/
             //QueueMethod();
+            LinkedListProgram.Operation();
+/*
+            var stackStr = new Stack<string>();
+            stackStr.Push("A");
+            stackStr.Push("B");
+            stackStr.Push("C");
+            stackStr.Push("D");
+            stackStr.Push("D");
+            stackStr.Push("D");
+            stackStr.Push("D");
+            stackStr.Push("D");
+            stackStr.Push("D");
+            stackStr.Push("D");*/
+
         }
 
         private static void QueueMethod()
